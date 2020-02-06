@@ -1,7 +1,7 @@
 {
-  "name": "hello-pluralsight-project",
+  "name": "ps-score-board-project",
   "version": "1.0.0",
-  "description": "Sample Pluralsight Project",
+  "description": "Score Board Project",
   "main": "index.js",
   "scripts": {
     "test": "npm-run-all -s test:code",
@@ -10,7 +10,7 @@
     "test-watch": "npm-run-all  -p -r test-watch:code",
     "test-watch:code": "mocha test/ --bail --watch --watch-extensions html"
   },
-  "author": "Adam Fortuna",
+  "author": "Rupesh Tiwari",
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
