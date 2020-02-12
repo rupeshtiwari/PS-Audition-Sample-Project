@@ -5,28 +5,18 @@ var jsdom = require('jsdom'),
 
 var { JSDOM } = jsdom;
 
-var fs = require('fs');
-
-var indexJS;
-
-fs.readFile('./index.js', 'utf8', function(err, contents) {
-  indexJS = contents;
-});
-
-require('./index.js');
-
 describe('ScoreBoard App', function() {
-  var window;
+  var window, $;
 
   before(function() {
     window = new JSDOM(file).window;
-
-    require('jquery')(window);
+    $ = global.jQuery = require('jquery')(window);
   });
+
   describe('ScoreBoard Index Html Page', function() {
     it("should have a title that's a child of the head element @title", function() {
       assert.equal(
-        window.$('head > title').length,
+        $('head > title').length,
         1,
         'Make sure to create a `title` element.'
       );
@@ -34,7 +24,7 @@ describe('ScoreBoard App', function() {
 
     it('should have a title that contains score board @title', function() {
       assert.equal(
-        window.$('head > title').text(),
+        $('head > title').text(),
         'Score Board',
         'Make sure to set the content of the `title` element to score board.'
       );
@@ -42,7 +32,7 @@ describe('ScoreBoard App', function() {
 
     it("should have an `input` with `type=text` element that's a child of the `div` with `conatiner` class element @input", function() {
       assert.isAtLeast(
-        window.$('.container > input').length,
+        $('.container > input').length,
         1,
         "Make sure to create an `input` with `type=text` element that's a child of the `div` with `conatiner` class element."
       );
@@ -50,7 +40,7 @@ describe('ScoreBoard App', function() {
 
     it("should have a `button` that's a child of the `container div` @incrementbutton", function() {
       assert.isAtLeast(
-        window.$('div >button').length,
+        $('div >button').length,
         1,
         "Make sure to create an `input` with `type=text` element that's a child of the `div`."
       );
@@ -80,7 +70,7 @@ describe('ScoreBoard App', function() {
 
     it("should have a `button` that's a child of the `container div` @decrementbutton", function() {
       assert.isAtLeast(
-        window.$('div > button').last().length,
+        $('div > button').last().length,
         1,
         "Make sure to create an `input` with `type=text` element that's a child of the `div`."
       );
@@ -120,7 +110,7 @@ describe('ScoreBoard App', function() {
     });
     it("should have a script that's a child of the head element @script", function() {
       assert.equal(
-        window.$('head > script').length,
+        $('head > script').length,
         2,
         'Make sure to create a `title` element.'
       );
@@ -134,37 +124,6 @@ describe('ScoreBoard App', function() {
           .attr('src'),
         './index.js',
         'Make sure to set the content of the `title` element to score board.'
-      );
-    });
-  });
-
-  describe('Score Board App index.js', function() {
-    it(`Add a document ready call back function @documentready`, function() {
-      assert.isTrue(
-        indexJS.includes(`$(function()`),
-        'Make sure to add document ready method from jquery.'
-      );
-    });
-
-    it('Add an callback function `on` increment button `click` event @incrementcallback', function() {
-      assert.isTrue(
-        indexJS.includes(`$('.increment').on('click', function() {`),
-        'Make sure you added a callback function `on` increment button `click` event'
-      );
-    });
-
-    it('Add an callback function `on` increment button `click` event. In this call back you will read the value of `input textbox` and increment it by 1 @incrementcallback', function() {
-      window.$('.increment').trigger('click');
-      assert.equal(
-        window.$('input').val(),
-        1,
-        'Make sure you added a callback function `on` increment button `click` event. In this call back you will read the value of `input textbox` and increment it by 1'
-      );
-    });
-
-    it(`Add a document ready call back function @decrementcallback`, function() {
-      assert.isTrue(
-        indexJS.includes(`$('.decrement').on('click', function() {`)
       );
     });
   });
