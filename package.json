@@ -6,9 +6,10 @@
   "scripts": {
     "test": "npm-run-all -s test:code",
     "test:code": "mocha  --timeout 10000 test/",
-    "deploy:github-pages": "git push origin master:gh-pages",
+    "deploy:github-pages": "git subtree push --prefix tasks/solutions origin gh-pages",
     "test-watch": "npm-run-all  -p -r test-watch:code",
-    "test-watch:code": "mocha test/ --bail --watch --watch-extensions html"
+    "test-watch:code": "mocha test/ --bail --watch --watch-extensions html",
+
   },
   "author": "Rupesh Tiwari",
   "license": "MIT",
