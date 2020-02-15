@@ -21,10 +21,14 @@ describe('Index.HTML Behavior', () => {
     await page.goto('http://localhost:9000');
   });
 
-  it('page should have h1', async () => {
+  it('page should have h1 @h1', async () => {
     const expectedHeader = 'Welcome to Score Board';
     const text = await page.$eval('h1', e => e.innerHTML.trim());
-    assert.equal(text, expectedHeader);
+    assert.equal(
+      text,
+      expectedHeader,
+      'Make sure you add h1 with text "Welcome to Score Board"'
+    );
   });
 
   it("should have a title that's a child of the head element @title", async () => {

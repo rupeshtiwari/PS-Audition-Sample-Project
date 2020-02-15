@@ -2,7 +2,8 @@
 
 ## Description
 
-This is a project where you will create your first javascript app. In this app you will learn how to create a simple score board app. You will create html and write the entire functionality step by step. 
+This is a project where you will create your first javascript app. In this app you will learn how to create a simple score board app. You will create html and write the entire functionality step by step.
+
 ## Full Description
 
 ### Project Overview
@@ -71,6 +72,12 @@ $ npm test-watch
 
 You will be working on index.html page for the below set of tasks.
 
+[//]: # 'task_id: @h1'
+
+### Add a h1
+
+Create a `h1` element with text `Welcome to Score Board`.
+
 [//]: # 'task_id: @title'
 
 ### Add a Page Title
@@ -116,4 +123,3 @@ Add an callback function `on` increment button `click` event. In this call back 
 ### Add a Decrement Button Click Event Handler
 
 Add a call back jquery function `on` decrement button `click` event. In this call back you will read the value of `input textbox` and decrement it by 1.
-
