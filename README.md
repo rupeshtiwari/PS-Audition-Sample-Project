@@ -1,3 +1,4 @@
-# PS-Project
+# PS-Audition-Sample-Project    
 
-Link to the [Video](https://comming_soon).
+This is an app for score board. It has 8 tasks. For each task I have created required uni tests and guided error messages. 
+
