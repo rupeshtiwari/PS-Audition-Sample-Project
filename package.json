@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm-run-all -s test:code",
-    "test:code": "mocha test/",
+    "test:code": "mocha  --timeout 10000 test/",
     "deploy:github-pages": "git push origin master:gh-pages",
     "test-watch": "npm-run-all  -p -r test-watch:code",
     "test-watch:code": "mocha test/ --bail --watch --watch-extensions html"

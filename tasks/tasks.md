@@ -2,9 +2,7 @@
 
 ## Description
 
-This is a project where you will create your first javascript app. In this app you will learn how to create a simple score board app.
-You will create html and write the entire functionality step by step. Finally you will learn how to deploy your own scoreboard app into github pages.
-
+This is a project where you will create your first javascript app. In this app you will learn how to create a simple score board app. You will create html and write the entire functionality step by step. 
 ## Full Description
 
 ### Project Overview
@@ -107,32 +105,15 @@ Create a `script` element with `/index.js` src that's a child of the `head` elem
 
 You will be working on index.js page for the below set of tasks.
 
-[//]: # 'task_id: @documentready'
-
-### Add a document ready call back function
-
-Add a call back jquery function on document ready. In this call back you will add `click` call back functions for `increment` and `decrement` buttons. 
-
-[//]: # 'task_id: @incrementcallback'
+[//]: # 'task_id: @incrementcount'
 
 ### Add a Increment Button Click Event Handler
 
 Add an callback function `on` increment button `click` event. In this call back you will read the value of `input textbox` and increment it by 1.
 
-[//]: # 'task_id: @decrementcallback'
+[//]: # 'task_id: @decrementcount'
 
 ### Add a Decrement Button Click Event Handler
 
 Add a call back jquery function `on` decrement button `click` event. In this call back you will read the value of `input textbox` and decrement it by 1.
 
-## Next Steps
-
-Once all tests are passing, try pushing your master branch up to the `gh-pages` branch -- this will make your webpage available on the web! Here's a command to do that:
-
-```
-$ npm run deploy:github-pages
-```
-
-This will make your `index.html` file available at the URL:
-
-`http://<username>.github.io/HelloPluralsightProject/`
